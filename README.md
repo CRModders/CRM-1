@@ -8,9 +8,11 @@ This spec was created to allow mod developers to have their mods directly downlo
 
 ## Format?
 
-See [`spec/version-1.json`](spec/version-1.json).
+See [`spec/version-1.hjson`](spec/version-1.hjson).
 
 Please note that the `ext` object is for extensions, not regulated by this specification. It is for OPTIONAL additional data like icons that can be loaded by launchers, not crucial information.
+
+This file must be in the root of your repo named ``repository.hjson``.
 
 ## Notes
 
