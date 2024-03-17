@@ -17,4 +17,4 @@ This file must be in the root of your repo named ``repository.hjson``.
 ## Notes
 
 - CRM-1 will be elaborated on in the future.
-- CRM-1 is currently still in development. Expect breaking changes for a while until we get to a stable point. 
+- CRM-1 is currently still in development. Expect breaking changes for a while until we get to a stable point.
