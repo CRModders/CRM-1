@@ -106,7 +106,16 @@
             "$ref": "#/definitions/id"
         },
         "lastUpdated": {
+            "description": "A Unix timestamp of when this repo was last updated. This does not need to be 100% accurate.",
             "type": "integer"
+        },
+        "deps": {
+            "description": "A list of other repos that hosts mods depended on by mods hosted in this repo.",
+            "type": "array",
+            "items": {
+                "description": "A single repo. Typically this should be a URL.",
+                "type": "string"
+            }
         },
         "mods": {
             "description": "A list of all mods in the repository.",
