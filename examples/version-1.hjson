@@ -1,7 +1,10 @@
 {
+    $schema: "../spec/version-1.json"
+
     specVersion: 1
     rootId: io.github.crmodders
     lastUpdated: 0
+
     mods: [
         {
             id: io.github.crmodders.wiremod
@@ -13,8 +16,8 @@
             url: https://example.com/WireMod-0.6.9.jar
             deps: [
                 {
-                    id:io.github.crmodders.wirelib
-                    version: 4.2.0
+                    id: io.github.crmodders.wirelib
+                    version: "(0,4.2.0]"
                     source: io.github.crmodders
                 }
             ]

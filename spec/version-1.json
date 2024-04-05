@@ -1,0 +1,125 @@
+{
+    "$schema": "https://json-schema.org/draft-04/schema",
+
+    "type": "object",
+
+    "definitions": {
+        "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_\\.]*$"
+        },
+        "versionRange": {
+            "type": "string",
+            "pattern": "[([][0-9a-zA-Z_\\-\\.,]*[)\\]]"
+        },
+        "dependency": {
+            "description": "A single dependency for a mod.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "The ID of the mod.",
+                    "$ref": "#/definitions/id"
+                },
+                "version": {
+                    "description": "The version range for the dependency.",
+                    "$ref": "#/definitions/versionRange"
+                },
+                "source": {
+                    "description": "The ID of the repo to find the mod at.",
+                    "$ref": "#/definitions/id"
+                }
+            },
+            "required": [
+                "id",
+                "version",
+                "source"
+            ]
+        },
+        "mod": {
+            "description": "A single mod hosted in your repository.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "The ID of the mod. In most cases this should be the Maven ID of your mod.",
+                    "$ref": "#/definitions/id"
+                },
+                "name": {
+                    "description": "The name of the mod.",
+                    "type": "string"
+                },
+                "desc": {
+                    "description": "The description of the mod.",
+                    "type": "string"
+                },
+                "authors": {
+                    "description": "A list of all authors for the mod.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "version": {
+                    "description": "The latest version of the mod on the repository.",
+                    "type": "string"
+                },
+                "gameVersion": {
+                    "description": "The version of Cosmic Reach that the mod is made for.",
+                    "$ref": "#/definitions/versionRange"
+                },
+                "url": {
+                    "description": "The URL to download the latest version of the mod at.",
+                    "type": "string"
+                },
+                "deps": {
+                    "description": "A list of dependencies for the mod.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/dependency"
+                    }
+                },
+                "ext": {
+                    "description": "Extension information for the mod. This is used for any unofficial data used by launchers, tools, other mods, etc.",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "desc",
+                "authors",
+                "version",
+                "gameVersion",
+                "url",
+                "deps",
+                "ext"
+            ]
+        }
+    },
+
+    "properties": {
+        "specVersion": {
+            "description": "The version of CRM-1 to use.",
+            "type": "integer"
+        },
+        "rootId": {
+            "description": "The ID of the repository. In most cases this should be your root Maven ID.",
+            "$ref": "#/definitions/id"
+        },
+        "lastUpdated": {
+            "type": "integer"
+        },
+        "mods": {
+            "description": "A list of all mods in the repository.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/mod"
+            }
+        }
+    },
+    "required": [
+        "specVersion",
+        "rootId",
+        "lastUpdated",
+        "mods"
+    ]
+}
