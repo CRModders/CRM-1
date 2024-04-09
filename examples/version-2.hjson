@@ -1,9 +1,13 @@
 {
-    $schema: "../spec/version-1.json"
+    $schema: "../spec/version-2.json"
 
-    specVersion: 1
+    specVersion: 2
     rootId: io.github.crmodders
     lastUpdated: 0
+
+    deps: [
+        "https://example.com/crm1/repo.hjson"
+    ]
 
     mods: [
         {
@@ -19,6 +23,11 @@
                     id: io.github.crmodders.wirelib
                     version: "(0,4.2.0]"
                     source: io.github.crmodders
+                }
+                {
+                    id: com.example.examplemod
+                    version: "*"
+                    source: com.example
                 }
             ]
             ext: {

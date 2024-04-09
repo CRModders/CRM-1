@@ -8,9 +8,9 @@ This spec was created to allow mod developers to have their mods directly downlo
 
 ## Format?
 
-See [`spec/version-1.hjson`](spec/version-1.hjson).
+See [`spec/`](spec/). We keep each major version separate with the intent to prevent spec changes from breaking software that utilizes CRM-1.
 
-Please note that the `ext` object is for extensions, not regulated by this specification. It is for OPTIONAL additional data like icons that can be loaded by launchers, not crucial information.
+Please note that the `ext` object is for extensions; not regulated by this specification. It is for OPTIONAL additional data like icons that can be utilized by launchers- not crucial information.
 
 This file must be in the root of your repo named `repository.hjson`.
 
