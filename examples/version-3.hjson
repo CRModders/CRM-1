@@ -1,0 +1,72 @@
+{
+    $schema: "../spec/version-3.json"
+
+    specVersion: 3
+    rootId: io.github.crmodders
+    lastUpdated: 0
+
+    deps: [
+        "https://example.com/crm1/repo.hjson"
+    ]
+
+    mods: [
+        {
+            id: io.github.crmodders.wiremod
+            name: WireMod
+            desc: Mod that adds wiring to Cosmic Reach.
+            authors: [ "Team CRM" ]
+            ext: {
+                icon: https://example.com/WireMod.png
+            }
+            latest: 0.0.2
+            versions: [
+                {
+                    version: 0.0.2
+                    gameVersion: 0.1.7
+                    url: https://example.com/WireMod-0.0.2.jar
+                    deps: [
+                        {
+                            id: io.github.crmodders.wirelib
+                            version: "(0,4.2.0]"
+                            source: io.github.crmodders
+                        }
+                        {
+                            id: com.example.examplemod
+                            version: "*"
+                            source: com.example
+                        }
+                    ]
+                    ext: { }
+                }
+                {
+                    version: 0.0.1
+                    gameVersion: 0.1.7
+                    url: https://example.com/WireMod-0.0.1.jar
+                    deps: [
+                        {
+                            id: io.github.crmodders.wirelib
+                            version: "(0,4.2.0]"
+                            source: io.github.crmodders
+                        }
+                    ]
+                }
+            ]
+        }
+        {
+            id: io.github.crmodders.wirelib
+            name: WireLib
+            desc: Shared code mod for wiring primarily used in WireMod.
+            authors: [ "Team CRM" ]
+            ext: { }
+            versions: [
+                {
+                    version: 4.2.0
+                    gameVersion: 0.1.7
+                    url: https://example.com/WireLib-4.2.0.jar
+                    deps: [ ]
+                    ext: { }
+                }
+            ]
+        }
+    ]
+}
